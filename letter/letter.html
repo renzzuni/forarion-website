@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="../letter/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="envelope-wrapper">
+        <div class="envelope">
+          <div class="letter">
+            <div class="text">
+              <strong>Dear Arion,</strong>
+              <p>
+                I'm in love with you. And, I love that I'm in love with you. I
+                love the feelings. The happiness when I think of you, the
+                excitement and butterflies when you text me. You never fail to
+                make me laugh, and you're always there for me. You're amazing,
+                and I love you.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="heart"></div>
+        <button class="next-button">Next</button>
+      </div>
+    </div>
+    <script>
+      const envelope = document.querySelector(".envelope-wrapper");
+      const nextButton = document.querySelector(".next-button");
+
+      envelope.addEventListener("click", () => {
+        envelope.classList.toggle("flap");
+        setTimeout(() => {
+          nextButton.style.display = "block";
+        }, 1500);
+
+        const nextButton = document.querySelector(".next-button");
+
+        nextButton.addEventListener("click", () => {
+          // Redirect ke halaman HTML yang diinginkan
+          window.location.href = "../confess/confess.html";
+        });
+      });
+    </script>
+  </body>
+</html>
